@@ -121,3 +121,11 @@ body {
   transform: rotateY( calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(150px) translateY(-85px) scale(1.2);
 }
 
+.crystal-core{
+  pointer-events: none;
+}
+
+.item{
+  cursor: pointer;
+  pointer-events: auto;
+}
