@@ -1,14 +1,5 @@
 export let characterId = '';
 
-let characterTraits = [{
-raceName: '',
-costumizableTraits: {
-  skinColor: '',
-  hairType: '',
-  hairColor: '',
-  armor: '',
-  weapon: ''
-}}];
 
 export function transferCharacterData(){
   document.querySelector('.js-human-button').addEventListener('click', () => {
