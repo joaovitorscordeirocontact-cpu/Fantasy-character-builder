@@ -1,0 +1,48 @@
+
+.builder-title-container{
+  grid-area: item1;
+  justify-content: center;
+  
+}
+
+.character{
+  display: flex;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+}
+
+.character img{
+  height: clamp(100px, 50vh, 200px);
+  width: auto;
+  position: absolute;
+  
+  padding-bottom: 220px;
+  margin-top: 8vw;
+}
+.window-grid{
+  display: flex;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  justify-content:center;
+}
+.costumization-window{
+  display: flex;
+  position: absolute;
+  height: clamp(200px, 40vw, 400px);
+  left: 20px;
+  bottom: 50vh;
+  
+}
+.info-window{
+  display: flex;
+  position: absolute;
+  height: clamp(100px, 20vw, 200px);
+  right: 20px;
+  bottom: calc(50vh + 100px);
+  
+}
