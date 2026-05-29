@@ -1,3 +1,9 @@
+.race-name{
+  margin-top: 0;
+  color: white;
+  font-size: 10px;
+}
+
 .title-container {
   display: flex;
   flex-direction: column;
