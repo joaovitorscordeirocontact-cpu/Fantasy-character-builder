@@ -1,0 +1,117 @@
+body {
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.page-container{
+  display: flex;
+  flex-direction: column;
+  column-width: 10vh auto 10%;
+  align-items:center;
+  justify-content: space-between;
+  margin-top: 7vh;
+  row-gap: 10vh;
+  height: 90vh;
+}
+.page-container p{
+  font-size: clamp(1.5rem, 5vw, 2rem);
+}
+
+.main-content{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items:start;
+  width: 90vw;
+}
+.character-space{
+  position: fixed;
+  top: 33vh;
+  left: calc(50vw - (var(--width) / 2));
+  height: 400px;
+  width: var(--width);
+}
+.character{
+  height: max-content;
+  width: 100px;
+  filter:
+    drop-shadow(0 0 2px #7debff)
+    drop-shadow(0 0 5px #7dc9ff);
+  animation: character-glow 2s infinite alternate;
+}
+
+.button-container{
+  display: flex;
+  flex-direction: row;
+  width: 70vw;
+  justify-content: center;
+  align-items: center;
+}
+.home-button{
+  background: url("../assets/images/home-button.png");
+  height: 50px;
+  width: 180px;
+}
+
+.home-button{
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  
+  font-family: Pirata One, Arial;
+  font-weight: 400;
+  font-size: 1rem;
+  filter:
+      drop-shadow(0 0 2px #dc7dff)
+      drop-shadow(0 0 5px #e57dff);
+}
+
+@keyframes cyber-glow {
+  from {
+    filter:
+      drop-shadow(0 0 2px #dc7dff)
+      drop-shadow(0 0 5px #e57dff);
+  }
+
+  to {
+    filter:
+      drop-shadow(0 0 5px #dc7dff)
+      drop-shadow(0 0 8px #e57dff)
+      drop-shadow(0 0 16px #cf7dff);
+  }
+}
+
+@keyframes character-glow {
+  from {
+    filter:
+      drop-shadow(0 0 2px #7debff)
+      drop-shadow(0 0 5px #7dc9ff);
+  }
+
+  to {
+    filter:
+      drop-shadow(0 0 2px #7debff)
+      drop-shadow(0 0 5px #7dc9ff)
+      drop-shadow(0 0 16px #7dbeff);
+  }
+}
+
+.home-button:hover{
+  animation: cyber-glow 2s infinite alternate;
+}
+.home-button:hover{
+  color: rgb(158, 47, 238);
+}
