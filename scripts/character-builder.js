@@ -36,6 +36,8 @@ document.querySelector('.js-create-button')
     saveCharacterName(inputName);
   });
 
+  
+
 
 
 

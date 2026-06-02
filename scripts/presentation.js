@@ -1,5 +1,6 @@
 import { chosenRace } from "./data/character-data.js";
-import { loadCharacterName } from "./data/storage.js";
+import { loadCharacterName, navigateTo } from "./data/storage.js";
+
 
 console.log(loadCharacterName());
 
@@ -22,3 +23,8 @@ function renderPresentation(){
 }
 
 renderPresentation();
+
+document.querySelector('.js-home-button')
+  .addEventListener('click', () => {
+    navigateTo("index.html");
+  });
