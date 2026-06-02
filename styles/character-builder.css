@@ -46,6 +46,11 @@ body {
   grid-template-rows: 30% 30% 30%;
   justify-content: center;
   align-items: center;
+  filter:
+    drop-shadow(0 0 2px #dc7dff)
+    drop-shadow(0 0 8px #e57dff)
+    drop-shadow(0 0 10px #cf7dff);
+  animation: cyber-glow 2s infinite alternate;
 }
 .option{
   margin-top: 30px;
@@ -65,6 +70,9 @@ body {
 }
 .info-window{
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background: url("../assets/images/character-info-window.png");
   background-size: cover;
   background-position: center;
@@ -72,7 +80,39 @@ body {
   z-index: 3;
   height: 90px;
   width: 150px;
+  filter:
+    drop-shadow(0 0 2px #dc7dff)
+    drop-shadow(0 0 8px #e57dff)
+    drop-shadow(0 0 10px #cf7dff);
+  animation: cyber-glow 2s infinite alternate;
 }
+.info-window .name-input-text{
+  font-size: 10px;
+}
+.name-input{
+  font-size: 10px;
+  height: 20px;
+  width: calc(90% - 10px);
+}
+
+  
+
+
+@keyframes cyber-glow {
+  from {
+    filter:
+      drop-shadow(0 0 2px #dc7dff)
+      drop-shadow(0 0 5px #e57dff);
+  }
+
+  to {
+    filter:
+      drop-shadow(0 0 5px #dc7dff)
+      drop-shadow(0 0 8px #e57dff)
+      drop-shadow(0 0 16px #cf7dff);
+  }
+}
+
 
 /* For less than 980px x 460px there will be a new format. */
 
