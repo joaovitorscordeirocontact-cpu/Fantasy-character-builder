@@ -1,4 +1,70 @@
+.page-container{
+  display: flex;
+  flex-direction: column;
+  column-width: 10vh auto 10%;
+  align-items:center;
+  justify-content: center;
+  margin-top: 7vh;
+  row-gap: 10vh;
 
+}
+.page-container p{
+  font-size: clamp(1.5rem, 5vw, 2rem);
+}
+
+.main-content{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items:start;
+  width: 90vw;
+}
+.costumization-window{
+  display: grid;
+  background: url("../assets/images/costumization-window.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 3;
+  height: 300px;
+  width: 250px;
+  grid-template-columns: repeat(2, calc(40% - 8px));
+  grid-template-rows: 30% 30% 30%;
+  justify-content: center;
+  align-items: center;
+}
+.option{
+  margin-top: 30px;
+  scale: 0.5;
+}
+
+.character-space{
+  position: fixed;
+  top: 33vh;
+  left: calc(50vw - (var(--width) / 2));
+  height: 400px;
+  width: var(--width);
+}
+.character{
+  height: max-content;
+  width: 100px;
+}
+.info-window{
+  display: flex;
+  background: url("../assets/images/character-info-window.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 3;
+  height: 90px;
+  width: 150px;
+}
+
+/* For less than 980px x 460px there will be a new format. */
+
+
+
+/*
 .builder-title-container{
   grid-area: item1;
   justify-content: center;
@@ -36,8 +102,35 @@
   height: clamp(200px, 40vw, 400px);
   left: 20px;
   bottom: 50vh;
+  flex-wrap: wrap;
+
+  gap: 16px;
+
   
 }
+.skin-color{
+  width: calc(50% -8px);
+
+}
+.hair-style{
+  width: calc(50% -8px);
+
+}
+.hair-color{
+  width: calc(50% -8px);
+ 
+}
+.armor{
+  width: calc(50% -8px);
+
+}
+.weapon{
+  width: calc(50% -8px);
+  top: 75px;
+  left: 75px;
+}
+
+
 .info-window{
   display: flex;
   position: absolute;
@@ -46,3 +139,4 @@
   bottom: calc(50vh + 100px);
   
 }
+*/

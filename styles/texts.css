@@ -1,3 +1,11 @@
+p{
+  font-family: Kaushan Script, Arial;
+  font-weight: 400;
+  font-size: 10px;
+  margin: 1px;
+  color: white;
+  margin-bottom: 5px;
+}
 .race-name{
   margin-top: 0;
   color: white;
