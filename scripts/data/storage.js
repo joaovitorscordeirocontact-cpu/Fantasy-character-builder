@@ -60,3 +60,11 @@ export function navigateTo(url) {
     window.location.href = url;
   }, 300);
 }
+
+export function saveCharacterName(name) {
+  localStorage.setItem('characterName', JSON.stringify(name));
+}
+
+export function loadCharacterName() {
+  return JSON.parse(localStorage.getItem('characterName'));
+}

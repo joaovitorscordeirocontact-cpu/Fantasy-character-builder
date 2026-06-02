@@ -1,9 +1,13 @@
+import { chosenRace } from "./data/character-data.js";
+import { loadCharacterName } from "./data/storage.js";
 
-/*
+console.log(loadCharacterName());
+
 function renderPresentation(){
   let imageName = chosenRace.raceName.toLowerCase();
+  let name = loadCharacterName();
 
-  let titleHTML = `Costumize your ${imageName} character.
+  let titleHTML = `You Created ${name}!
   `;
 
   let characterHTML = `
@@ -18,4 +22,3 @@ function renderPresentation(){
 }
 
 renderPresentation();
-*/
