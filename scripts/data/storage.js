@@ -53,7 +53,7 @@ export function loadId(){
   characterId = JSON.parse(localStorage.getItem('characterId'));
 }
 
-function navigateTo(url) {
+export function navigateTo(url) {
   document.body.classList.add('fade-out');
 
   setTimeout(() => {

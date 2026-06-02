@@ -48,9 +48,8 @@ body {
   align-items: center;
   filter:
     drop-shadow(0 0 2px #dc7dff)
-    drop-shadow(0 0 8px #e57dff)
-    drop-shadow(0 0 10px #cf7dff);
-  animation: cyber-glow 2s infinite alternate;
+    drop-shadow(0 0 5px #e57dff);
+  
 }
 .option{
   margin-top: 30px;
@@ -67,6 +66,10 @@ body {
 .character{
   height: max-content;
   width: 100px;
+  filter:
+    drop-shadow(0 0 2px #7debff)
+    drop-shadow(0 0 5px #7dc9ff);
+  animation: character-glow 2s infinite alternate;
 }
 .info-window{
   display: flex;
@@ -82,9 +85,8 @@ body {
   width: 150px;
   filter:
     drop-shadow(0 0 2px #dc7dff)
-    drop-shadow(0 0 8px #e57dff)
-    drop-shadow(0 0 10px #cf7dff);
-  animation: cyber-glow 2s infinite alternate;
+    drop-shadow(0 0 5px #e57dff);
+
 }
 .info-window .name-input-text{
   font-size: 10px;
@@ -93,10 +95,42 @@ body {
   font-size: 10px;
   height: 20px;
   width: calc(90% - 10px);
+} 
+
+.button-container{
+  display: flex;
+  flex-direction: row;
+  width: 70vw;
+  justify-content: space-between;
+  align-items: center;
 }
-
+.home-button{
+  background: url("../assets/images/home-button.png");
+  height: 50px;
+  width: 180px;
+}
+.create-button{
+  background: url("../assets/images/save-character-button.png");
+  height: 40px;
+  width: 150px;
+}
+.home-button,
+.create-button{
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
   
-
+  font-family: Pirata One, Arial;
+  font-weight: 400;
+  font-size: 1rem;
+  filter:
+      drop-shadow(0 0 2px #dc7dff)
+      drop-shadow(0 0 5px #e57dff);
+}
 
 @keyframes cyber-glow {
   from {
@@ -112,6 +146,33 @@ body {
       drop-shadow(0 0 16px #cf7dff);
   }
 }
+
+@keyframes character-glow {
+  from {
+    filter:
+      drop-shadow(0 0 2px #7debff)
+      drop-shadow(0 0 5px #7dc9ff);
+  }
+
+  to {
+    filter:
+      drop-shadow(0 0 2px #7debff)
+      drop-shadow(0 0 5px #7dc9ff)
+      drop-shadow(0 0 16px #7dbeff);
+  }
+}
+
+.costumization-window:hover,
+.info-window:hover,
+.home-button:hover,
+.create-button:hover{
+  animation: cyber-glow 2s infinite alternate;
+}
+.home-button:hover,
+.create-button:hover{
+  color: rgb(158, 47, 238);
+}
+
 
 
 /* For less than 980px x 460px there will be a new format. */

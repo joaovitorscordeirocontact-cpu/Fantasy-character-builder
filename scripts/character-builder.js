@@ -1,4 +1,4 @@
-import { transferCharacterData, characterId, loadId } from "./data/storage.js";
+import { transferCharacterData, characterId, loadId, navigateTo } from "./data/storage.js";
 import { characterTraits } from "./data/races-data.js";
 
 loadId();
@@ -39,3 +39,13 @@ function renderCharacter(){
 }
 
 renderCharacter();
+
+document.querySelector('.js-home-button')
+  .addEventListener('click', () => {
+    navigateTo("index.html");
+  });
+
+document.querySelector('.js-create-button')
+  .addEventListener('click', () => {
+    navigateTo("presentation.html");
+  });
