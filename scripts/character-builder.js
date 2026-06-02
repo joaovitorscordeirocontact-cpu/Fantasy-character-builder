@@ -24,18 +24,18 @@ console.log(chosenRace);
 function renderCharacter(){
   let imageName = chosenRace.raceName.toLowerCase();
 
-  let titleHTML = `
-    <p>Costumize your ${imageName} character</p>
+  let titleHTML = `Costumize your ${imageName} character.
   `;
 
   let characterHTML = `
       <img class="character" src="./assets/images/character-sprites/${imageName}/${imageName}.png">
   `;
 
-  document.querySelector('.js-page-title')
-    .innerHTML = titleHTML;  
+  document.querySelector('.js-title')
+    .textContent = titleHTML;  
 
   document.querySelector('.js-character-space')
     .innerHTML = characterHTML;
 }
+
 renderCharacter();

@@ -6,42 +6,42 @@ export function transferCharacterData(){
       characterId = 'Human';
       saveId();
       console.log('clicked');
-      window.location.href = 'character-builder.html';
+      navigateTo('character-builder.html');
     });
   
   document.querySelector('.js-elf-button')
     .addEventListener('click', () => {
       characterId = 'Elf';
       saveId();
-      window.location.href = 'character-builder.html';
+      navigateTo('character-builder.html');
     });
 
   document.querySelector('.js-shadow-button')
     .addEventListener('click', () => {
       characterId = 'Shadow';
       saveId();
-      window.location.href = 'character-builder.html';
+      navigateTo('character-builder.html');
     });
 
   document.querySelector('.js-orc-button')
     .addEventListener('click', () => {
       characterId = 'Orc';
       saveId();
-      window.location.href = 'character-builder.html';
+      navigateTo('character-builder.html');
     });
 
   document.querySelector('.js-android-button')
     .addEventListener('click', () => {
       characterId = 'Android';
       saveId();
-      window.location.href = 'character-builder.html';
+      navigateTo('character-builder.html');
     });
 
   document.querySelector('.js-beastman-button')
     .addEventListener('click', () => {
       characterId = 'Beastman';
       saveId();
-      window.location.href = 'character-builder.html';
+      navigateTo('character-builder.html');
     });
 }
 
@@ -51,4 +51,12 @@ export function saveId(){
 
 export function loadId(){
   characterId = JSON.parse(localStorage.getItem('characterId'));
+}
+
+function navigateTo(url) {
+  document.body.classList.add('fade-out');
+
+  setTimeout(() => {
+    window.location.href = url;
+  }, 300);
 }

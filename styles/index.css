@@ -7,7 +7,15 @@ body {
   background-repeat: no-repeat;
   height: 100vh;
   overflow: hidden;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
+.fade-out {
+  opacity: 0;
+  transform: scale(0.98);
+}
+
 
 .border-detail-up-left {
   position: absolute;
