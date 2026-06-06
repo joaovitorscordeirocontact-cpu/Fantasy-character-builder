@@ -13,38 +13,42 @@ function renderCharacter(){
       <img class="character" src="./assets/images/character-sprites/${imageName}/${imageName}.png">
   `;
 
-  let customizationOptionsHTML = `
-    <div class="skin-color option">
+  let customizationOptionsHTML = ``;
+
+  if(chosenRace.costumizableTraits.skinColor === true){
+    customizationOptionsHTML += `<div class="skin-color option">
       <p>Skin Color:</p>
       <input type="color">
-    </div>
-
-    <div class="hair-style option">
-      <p>Hair Style:</p>
-      <input type="radio" name="hair-style" value="hair-one">
-      <input type="radio" name="hair-style" value="hair-two">
-      <input type="radio" name="hair-style" value="hair-three">
-    </div>
-
-    <div class="hair-color option">
+    </div>`
+  }
+  if(chosenRace.costumizableTraits.hairColor === true){
+    customizationOptionsHTML += `<div class="hair-color option">
       <p>Hair Color:</p>
       <input type="color">
-    </div>
-
-    <div class="armor option">
+    </div>`
+  }
+  if(chosenRace.raceName === 'Android'){
+    customizationOptionsHTML += `<div class="armor option">
       <p>Armor:</p>
-      <input type="radio" name="armor" value="armor-one">
-      <input type="radio" name="armor" value="armor-two">
-      <input type="radio" name="armor" value="armor-three">
-    </div>
-
-    <div class="weapon option">
-      <p>Weapon:</p>
-      <input type="radio" name="Weapon" value="weapon-one">
-      <input type="radio" name="Weapon" value="weapon-one">
-      <input type="radio" name="Weapon" value="weapon-one">
-    </div>
-  `;
+      <input type="radio" name="armor" value="armor-1">
+      <input type="radio" name="armor" value="armor-2">
+      <input type="radio" name="armor" value="armor-3">
+      <input type="radio" name="armor" value="armor-4">
+    </div>`
+  } else if(chosenRace.raceName === 'Human'){
+    customizationOptionsHTML += `<div class="armor option">
+      <p>Armor:</p>
+      <input type="radio" name="armor" value="armor-1">
+      <input type="radio" name="armor" value="armor-2">
+      <input type="radio" name="armor" value="armor-3">
+    </div>`
+  } else if(chosenRace.costumizableTraits.armorOrClothes === true){
+    customizationOptionsHTML += `<div class="armor option">
+      <p>Armor:</p>
+      <input type="radio" name="armor" value="armor-1">
+      <input type="radio" name="armor" value="armor-2">
+    </div>`
+  }
 
   document.querySelector('.js-title')
     .textContent = titleHTML;  
@@ -58,6 +62,12 @@ function renderCharacter(){
 }
 
 renderCharacter();
+
+
+
+
+
+
 
 document.querySelector('.js-home-button')
   .addEventListener('click', () => {
