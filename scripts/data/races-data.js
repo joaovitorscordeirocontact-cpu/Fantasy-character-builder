@@ -1,12 +1,14 @@
+// Future Upgrades were commented out 
+
 export const characterTraits = [
   {
     raceName: 'Human',
     costumizableTraits: {
       skinColor: true,
-      hairType: true,
+     //hairType: true,
       hairColor: true,
       armorOrClothes: true,
-      weapon: true
+      //weapon: true
     }
   },
 
@@ -14,10 +16,10 @@ export const characterTraits = [
     raceName: 'Android',
     costumizableTraits: {
       skinColor: true,
-      hairType: false,
+      //hairType: false,
       hairColor: false,
       armorOrClothes: true,
-      weapon: true
+      //weapon: true
     }
   },
 
@@ -25,10 +27,10 @@ export const characterTraits = [
     raceName: 'Orc',
     costumizableTraits: {
       skinColor: true,
-      hairType: true,
+      //hairType: true,
       hairColor: true,
       armorOrClothes: true,
-      weapon: true
+      //weapon: true
     }
   },
 
@@ -36,10 +38,10 @@ export const characterTraits = [
     raceName: 'Elf',
     costumizableTraits: {
       skinColor: true,
-      hairType: true,
+      //hairType: true,
       hairColor: true,
       armorOrClothes: true,
-      weapon: true
+      //weapon: true
     }
   },
 
@@ -47,10 +49,10 @@ export const characterTraits = [
     raceName: 'Shadow',
     costumizableTraits: {
       skinColor: false,
-      hairType: false,
+      //hairType: false,
       hairColor: false,
       armorOrClothes: true,
-      weapon: true
+      //weapon: true
     }
   },
 
@@ -58,10 +60,10 @@ export const characterTraits = [
     raceName: 'Beastman',
     costumizableTraits: {
       skinColor: false,
-      hairType: true,
+      //hairType: true,
       hairColor: true,
       armorOrClothes: true,
-      weapon: true
+      //weapon: true
     }
   }
 ];
