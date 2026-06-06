@@ -35,14 +35,14 @@ body {
 }
 .character-space{
   position: fixed;
-  top: 33vh;
+  top: calc(43vh - (200px / 2));
   left: calc(50vw - (var(--width) / 2));
   height: 400px;
   width: var(--width);
 }
 .character{
   height: max-content;
-  width: 100px;
+  width: var(--width);
   filter:
     drop-shadow(0 0 2px #7debff)
     drop-shadow(0 0 5px #7dc9ff);
