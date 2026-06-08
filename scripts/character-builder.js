@@ -1,7 +1,7 @@
 import { navigateTo, saveCharacterName, saveImageAdress, loadImageAdress } from "./data/storage.js";
 import { chosenRace } from "./data/character-data.js";
 import { imagePaths, getImageAdress } from "./data/shared.js";
-import { changeArmor } from "./armor.js";
+import { changeArmor, changeArmorColor, defaultLayer } from "./armor.js";
 
 
 
@@ -21,19 +21,21 @@ function renderCharacter(){
   characterHTML = getImageAdress();
   saveImageAdress(characterHTML);
 
+
   let customizationOptionsHTML = ``;
 
   if(chosenRace.costumizableTraits.skinColor === true){
     customizationOptionsHTML += `<div class="skin-color option">
-      <p>Skin Color:</p>
+      <!--<p>Skin Color:</p>-->
+      <p>Color:</p>
       <input type="color">
     </div>`
   }
   if(chosenRace.costumizableTraits.hairColor === true){
-    customizationOptionsHTML += `<div class="hair-color option">
+    customizationOptionsHTML += `<!--<div class="hair-color option">
       <p>Hair Color:</p>
       <input type="color">
-    </div>`
+    </div> Without this trait in the MVP-->`
   }
   if(chosenRace.raceName === 'Android'){
     customizationOptionsHTML += `<form id="armorForm" class="option">
@@ -90,7 +92,10 @@ function renderCharacter(){
 renderCharacter();
 if(typeof changeArmor === 'function'){
   // attach armor listeners only when the customization form is present
-  if(document.querySelector('.js-customization-window')) changeArmor();
+  if(document.querySelector('.js-customization-window')){ changeArmor();
+    defaultLayer();
+    changeArmorColor();
+  }
 }
 
 

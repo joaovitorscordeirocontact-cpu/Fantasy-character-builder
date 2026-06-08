@@ -64,8 +64,21 @@ export function loadImageAdress(){
   return JSON.parse(localStorage.getItem('characterImageAdress'));
 }
 
+export function saveImageSrc(imageAdress){
+  localStorage.setItem('colorLayerImageSrc', JSON.stringify(imageAdress));
+}
 
+export function loadImageSrc(){
+  return JSON.parse(localStorage.getItem('colorLayerImageSrc'));
+}
 
+export function saveColor(color){
+  localStorage.setItem('color', JSON.stringify(color));
+}
+
+export function loadColor(){
+  return JSON.parse(localStorage.getItem('color'));
+}
 
 
 export function navigateTo(url) {

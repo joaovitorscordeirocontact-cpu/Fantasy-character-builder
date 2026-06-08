@@ -95,7 +95,7 @@ body {
 .banner .slider .item {
   position: absolute;
   inset: 0 0 0 0;
-  transform: rotateY( calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(150px) translateY(-85px);
+  transform: rotateY( calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(170px) translateY(-105px);
 
   transition: filter 0.5s;
   transition: 0.5s cubic-bezier(.49,-0.88,.48,1.68);

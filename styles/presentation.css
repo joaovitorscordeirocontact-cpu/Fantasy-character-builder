@@ -40,14 +40,38 @@ body {
   height: 400px;
   width: var(--width);
 }
-.character{
-  height: max-content;
+.character-wrapper {
+  position: relative;
   width: var(--width);
+}
+.character{
+  position: relative;
+  height: max-content;
+  width: 100%;
   filter:
     drop-shadow(0 0 2px #7debff)
     drop-shadow(0 0 5px #7dc9ff);
   animation: character-glow 2s infinite alternate;
+  z-index: 1;
 }
+.character-color{
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  mix-blend-mode: hue;
+  pointer-events: none;
+
+  mask-image: url(../assets/images/character-sprites/android/android.png);
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+
+  z-index: 2;
+}
+
+
+
+
 
 .button-container{
   display: flex;

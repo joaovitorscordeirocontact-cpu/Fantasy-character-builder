@@ -63,14 +63,48 @@ body {
   height: 400px;
   width: var(--width);
 }
-.character{
-  height: max-content;
+.character-wrapper {
+  position: relative;
   width: var(--width);
+}
+.character{
+  position: relative;
+  height: max-content;
+  width: 100%;
   filter:
     drop-shadow(0 0 2px #7debff)
     drop-shadow(0 0 5px #7dc9ff);
   animation: character-glow 2s infinite alternate;
+  z-index: 1;
 }
+/*.character-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: red;
+  mix-blend-mode: hue;
+  z-index: 2;
+  pointer-events: none;
+}*/
+.character-color{
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  mix-blend-mode: hue;
+  pointer-events: none;
+
+  mask-image: url(../assets/images/character-sprites/android/android.png);
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+
+  z-index: 2;
+}
+
+
+
 .info-window{
   display: flex;
   flex-direction: column;
@@ -179,79 +213,3 @@ body {
 
 
 
-/*
-.builder-title-container{
-  grid-area: item1;
-  justify-content: center;
-  
-}
-
-.character{
-  display: flex;
-  position: relative;
-  height: 100vh;
-  width: 100vw;
-  align-items: center;
-  justify-content: center;
-}
-
-.character img{
-  height: clamp(100px, 50vh, 200px);
-  width: auto;
-  position: absolute;
-  
-  padding-bottom: 220px;
-  margin-top: 8vw;
-}
-.window-grid{
-  display: flex;
-  position: relative;
-  height: 100vh;
-  width: 100vw;
-  align-items: center;
-  justify-content:center;
-}
-.costumization-window{
-  display: flex;
-  position: absolute;
-  height: clamp(200px, 40vw, 400px);
-  left: 20px;
-  bottom: 50vh;
-  flex-wrap: wrap;
-
-  gap: 16px;
-
-  
-}
-.skin-color{
-  width: calc(50% -8px);
-
-}
-.hair-style{
-  width: calc(50% -8px);
-
-}
-.hair-color{
-  width: calc(50% -8px);
- 
-}
-.armor{
-  width: calc(50% -8px);
-
-}
-.weapon{
-  width: calc(50% -8px);
-  top: 75px;
-  left: 75px;
-}
-
-
-.info-window{
-  display: flex;
-  position: absolute;
-  height: clamp(100px, 20vw, 200px);
-  right: 20px;
-  bottom: calc(50vh + 100px);
-  
-}
-*/
