@@ -1,25 +1,15 @@
 import { chosenRace } from "./data/character-data.js";
-import { loadCharacterName, navigateTo } from "./data/storage.js";
-
-
-console.log(loadCharacterName());
+import { loadCharacterName, navigateTo, loadImageAdress } from "./data/storage.js";
 
 function renderPresentation(){
-  let imageName = chosenRace.raceName.toLowerCase();
-  let name = loadCharacterName();
+  const name = loadCharacterName();
+  const characterHTML = loadImageAdress() || '';
 
-  let titleHTML = `You Created ${name}!
-  `;
+  const titleEl = document.querySelector('.js-title');
+  if(titleEl) titleEl.textContent = `You Created ${name}!`;
 
-  let characterHTML = `
-      <img class="character" src="./assets/images/character-sprites/${imageName}/${imageName}.png">
-  `;
-
-  document.querySelector('.js-title')
-    .textContent = titleHTML;  
-
-  document.querySelector('.js-character-space')
-    .innerHTML = characterHTML;
+  const charSpace = document.querySelector('.js-character-space');
+  if(charSpace) charSpace.innerHTML = characterHTML;
 }
 
 renderPresentation();

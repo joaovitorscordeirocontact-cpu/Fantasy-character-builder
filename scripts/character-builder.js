@@ -1,17 +1,25 @@
-import { navigateTo, saveCharacterName } from "./data/storage.js";
+import { navigateTo, saveCharacterName, saveImageAdress, loadImageAdress } from "./data/storage.js";
 import { chosenRace } from "./data/character-data.js";
+import { imagePaths, getImageAdress } from "./data/shared.js";
+import { changeArmor } from "./armor.js";
 
 
+
+
+export let characterHTML = ``;
 
 function renderCharacter(){
-  let imageName = chosenRace.raceName.toLowerCase();
+  // If there's no chosen race (page opened directly), bail out safely
+  if(!chosenRace) return;
 
   let titleHTML = `Costumize your ${chosenRace.raceName} character.
   `;
 
-  let characterHTML = `
-      <img class="character" src="./assets/images/character-sprites/${imageName}/${imageName}.png">
-  `;
+ 
+  imagePaths(1);
+
+  characterHTML = getImageAdress();
+  saveImageAdress(characterHTML);
 
   let customizationOptionsHTML = ``;
 
@@ -28,40 +36,80 @@ function renderCharacter(){
     </div>`
   }
   if(chosenRace.raceName === 'Android'){
-    customizationOptionsHTML += `<div class="armor option">
+    customizationOptionsHTML += `<form id="armorForm" class="option">
       <p>Armor:</p>
-      <input type="radio" name="armor" value="armor-1">
-      <input type="radio" name="armor" value="armor-2">
-      <input type="radio" name="armor" value="armor-3">
-      <input type="radio" name="armor" value="armor-4">
-    </div>`
+      <label>
+        <input type="radio" name="armor" value="1">
+      </label>
+      <label>
+        <input type="radio" name="armor" value="2">
+      </label>
+      <label>
+        <input type="radio" name="armor" value="3">
+      </label>
+      <label>
+        <input type="radio" name="armor" value="4">
+      </label>
+    </form>`
   } else if(chosenRace.raceName === 'Human'){
-    customizationOptionsHTML += `<div class="armor option">
+    customizationOptionsHTML += `<form id="armorForm" class="option">
       <p>Armor:</p>
-      <input type="radio" name="armor" value="armor-1">
-      <input type="radio" name="armor" value="armor-2">
-      <input type="radio" name="armor" value="armor-3">
-    </div>`
+      <label>
+        <input type="radio" name="armor" value="1">
+      </label>
+      <label>
+        <input type="radio" name="armor" value="2">
+      </label>
+      <label>
+        <input type="radio" name="armor" value="3">
+      </label>
+    </form>`
   } else if(chosenRace.costumizableTraits.armorOrClothes === true){
-    customizationOptionsHTML += `<div class="armor option">
+    customizationOptionsHTML += `<form id="armorForm" class="option">
       <p>Armor:</p>
-      <input type="radio" name="armor" value="armor-1">
-      <input type="radio" name="armor" value="armor-2">
-    </div>`
+      <label>
+        <input type="radio" name="armor" value="1">
+      </label>
+      <label>
+        <input type="radio" name="armor" value="2">
+      </label>
+    </form>`
   }
 
-  document.querySelector('.js-title')
-    .textContent = titleHTML;  
+  const titleEl = document.querySelector('.js-title');
+  if(titleEl) titleEl.textContent = titleHTML;
 
-  document.querySelector('.js-character-space')
-    .innerHTML = characterHTML;
+  const charSpaceEl = document.querySelector('.js-character-space');
+  if(charSpaceEl) charSpaceEl.innerHTML = characterHTML;
 
-  document.querySelector('.js-customization-window')
-    .innerHTML = customizationOptionsHTML;
+  const customWinEl = document.querySelector('.js-customization-window');
+  if(customWinEl) customWinEl.innerHTML = customizationOptionsHTML;
   
 }
 
 renderCharacter();
+if(typeof changeArmor === 'function'){
+  // attach armor listeners only when the customization form is present
+  if(document.querySelector('.js-customization-window')) changeArmor();
+}
+
+
+
+
+
+
+const homeBtn = document.querySelector('.js-home-button');
+if(homeBtn) homeBtn.addEventListener('click', () => {
+  navigateTo("index.html");
+});
+
+const createBtn = document.querySelector('.js-create-button');
+if(createBtn) createBtn.addEventListener('click', () => {
+  const nameInputEl = document.querySelector('.js-name-input');
+  const name = nameInputEl ? nameInputEl.value : '';
+  saveCharacterName(name);
+  navigateTo("presentation.html");
+});
 
 
 
@@ -69,21 +117,11 @@ renderCharacter();
 
 
 
-document.querySelector('.js-home-button')
-  .addEventListener('click', () => {
-    navigateTo("index.html");
-  });
-
-let inputName = '';
-
-document.querySelector('.js-create-button')
-  .addEventListener('click', () => {
-    navigateTo("presentation.html");
-    inputName = document.querySelector('.js-name-input').value;
-    saveCharacterName(inputName);
-  });
 
 
+
+
+// imagePaths and imageAdress now live in `data/shared.js`
 
 
 
