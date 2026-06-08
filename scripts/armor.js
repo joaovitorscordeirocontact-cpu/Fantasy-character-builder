@@ -8,8 +8,10 @@ export function defaultLayer(){
   imagePaths(4);
   const colorLayerSrc = getImageAdress();
   const colorLayer = document.querySelector('.character-color');
-  colorLayer.style.maskImage = `url(${colorLayerSrc})`;
-  colorLayer.style.backgroundColor = "transparent";
+  if(colorLayer){
+    colorLayer.style.maskImage = `url(${colorLayerSrc})`;
+    colorLayer.style.backgroundColor = "transparent";
+  }
 }
 
 
@@ -33,7 +35,9 @@ export function changeArmor(){
         saveImageSrc(colorLayerSrc);
 
         const colorLayer = document.querySelector('.character-color');
-        colorLayer.style.maskImage = `url(${colorLayerSrc})`;
+        if(colorLayer){
+          colorLayer.style.maskImage = `url(${colorLayerSrc})`;
+        }
 
         changeArmorColor();
 
@@ -51,6 +55,8 @@ export function changeArmor(){
 export function changeArmorColor(){
   const colorPicker = document.querySelector('.skin-color input');
   const colorLayer = document.querySelector('.character-color');
+
+  if(!colorPicker || !colorLayer) return;
 
   colorPicker.addEventListener('input', (color) => {
     let chosenColor = color.target.value;
