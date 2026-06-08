@@ -14,9 +14,9 @@ The project is functional and demonstrates the complete character creation flow.
 
 ## Live Demo
 
-Coming soon…
-
 ### GitHub Pages URL:
+
+[Click here](https://joaovitorscordeirocontact-cpu.github.io/Fantasy-character-builder/)
 
 
 
